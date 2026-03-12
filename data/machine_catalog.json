@@ -1,0 +1,40 @@
+{
+  "robots": [
+    {
+      "model": "KUKA KR 180 PA",
+      "payload": "180 kg",
+      "max_throughput": "1200 cartons/hour",
+      "price": 85000
+    },
+    {
+      "model": "ABB IRB 460",
+      "payload": "110 kg",
+      "max_throughput": "1100 cartons/hour",
+      "price": 65000
+    }
+  ],
+
+  "conveyors": [
+    {
+      "model": "Dematic Modular Conveyor",
+      "speed": "1.5 m/s",
+      "price": 18000
+    },
+    {
+      "model": "Interroll Belt Conveyor",
+      "speed": "1.2 m/s",
+      "price": 12000
+    }
+  ],
+
+  "plc": [
+    {
+      "model": "Siemens S7-1500",
+      "price": 9000
+    },
+    {
+      "model": "Allen Bradley ControlLogix",
+      "price": 11000
+    }
+  ]
+}

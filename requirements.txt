@@ -1,0 +1,12 @@
+streamlit
+ollama
+llama-index
+llama-index-llms-ollama
+llama-index-embeddings-ollama
+chromadb
+pypdf
+pdfplumber
+pandas
+numpy
+python-dotenv
+sentence-transformers
