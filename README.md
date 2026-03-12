@@ -48,8 +48,8 @@ You may also need to pull a model such as:
 
 ```bash
 ollama run llama3
-git clone https://github.com/yourusername/multi-agent-ai.git
-cd multi-agent-ai
+git clone https://github.com/satcastic/AI_RFPS_SYSTEM.git
+cd ai_rfp_system
 pip install -r requirements.txt
 
 #run using streamlit
