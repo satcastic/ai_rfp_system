@@ -1,0 +1,137 @@
+# AI_RFPS_SYSTEM
+# Multi-Agent AI System
+A modular AI system where multiple specialized agents collaborate to analyze documents and generate solutions for complex problem statements.
+
+## 🎯 Features
+
+* **Multi-Agent Architecture**: The system simulates multiple AI agents (e.g., Sales Agent, Solution Agent, Analysis Agent) that collaborate to process information and generate structured outputs.
+
+* **Document Processing**: Supports reading and analyzing uploaded documents such as PDFs and text files to extract useful insights.
+
+* **Local LLM Integration**: Uses **Ollama** to run large language models locally, enabling AI-powered reasoning without relying on external APIs.
+
+* **Interactive Interface**: A simple **Streamlit web interface** allows users to interact with the agents and test the workflow.
+
+* **Modular Design**: Each agent operates as a separate module, making the system easy to extend with additional agents or capabilities.
+
+* **Logic**: The system follows a sequential multi-agent workflow where the **Sales Agent interprets requirements, the Solution Agent proposes solutions, and the Analysis Agent processes documents and refines the output**.
+
+---
+
+## 💻 Technologies Used
+
+* **Language**: Python
+
+* **Libraries / Frameworks**
+  * Streamlit
+  * Ollama
+  * LlamaIndex
+  * ChromaDB
+  * Pandas
+  * NumPy
+  * Sentence Transformers
+  * PDF parsing libraries (pypdf / pdfplumber)
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Make sure the following are installed:
+
+* Python **3.10 or higher**
+* **Ollama** installed and running locally  
+  https://ollama.com
+
+You may also need to pull a model such as:
+
+```bash
+ollama run phi3
+git clone https://github.com/satcastic/AI_RFPS_SYSTEM.git
+cd ai_rfp_system
+pip install -r requirements.txt
+
+#run using streamlit
+streamlit run app.py
+# after running open browser at 
+#http://localhost:8501 
+```
+AI_RFP_SYSTEM/
+│
+├── agents/                 # AI agents responsible for each task
+│   ├── requirement_extractor.py
+│   ├── scenario_generator.py
+│   ├── machine_selector.py
+│   ├── cost_estimator.py
+│   └── proposal_generator.py
+│
+├── ingestion/              # Document loading and parsing
+│
+├── retrieval/              # RAG index creation
+│
+├── orchestrator/           # Multi-agent workflow controller
+│   └── workflow.py
+│
+├── utils/                  # Utility tools
+│   └── pdf_generator.py
+│
+├── data/                   # Machine catalogs and pricing data
+│
+├── test_documents/         # Sample RFP documents
+│
+├── app.py                  # Streamlit dashboard
+├── requirements.txt
+└── README.md
+
+
+##Using the System
+
+1. Upload RFP documents
+
+Supported formats:
+PDF
+TXT
+CSV
+XLSX
+
+2. Click Generate Proposal
+The AI workflow will execute automatically.
+
+3. View results in the dashboard
+You will see:
+extracted requirements
+automation scenarios
+selected machines
+cost estimates
+generated proposal
+
+4 Download the generated PDF.
+
+
+Challenges Encountered
+
+During development several technical challenges were addressed:
+
+JSON Output Instability
+Local LLM responses sometimes returned malformed JSON.
+Solution:
+implemented regex cleaning
+enforced strict output formats
+
+Model Latency
+Large prompts increased response times.
+Solution:
+optimized prompts
+simplified agent instructions
+
+Cost Estimation Issues
+Machine outputs initially returned descriptions rather than models.
+Solution:
+standardized machine catalog
+mapped machines to pricing database
+
+OpenAI Dependency Errors
+LlamaIndex attempted to use OpenAI embeddings.
+Solution:
+switched to local embedding models
